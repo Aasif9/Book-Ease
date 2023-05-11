@@ -4,7 +4,7 @@
 
 1. ###### [Technology Used](https://github.com/Aasif9/Book-Ease/blob/master/README.md#techonology-used)
 
-2. ###### [EER Diagram](https://github.com/Aasif9/Book-Ease/blob/master/README.md#eer-diagram-1)
+2. ###### [Schema Design](https://github.com/Aasif9/Book-Ease/blob/master/README.md#eer-diagram-1)
  
 3. ###### [Functionalities](https://github.com/Aasif9/Book-Ease/blob/master/README.md#functionalities-1)
 
@@ -32,7 +32,7 @@
 
 
 
-## EER Diagram
+## Schema Design(ER- Diagram)
 ![Schema](https://user-images.githubusercontent.com/116377954/222748653-bd0071a1-7a42-4847-a9fa-2c037dce3a55.png)
 
 
