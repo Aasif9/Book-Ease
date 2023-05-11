@@ -4,11 +4,11 @@
 
 1. ###### [Technology Used](https://github.com/Aasif9/Book-Ease/blob/master/README.md#techonology-used)
 
-2. ###### [EER Diagram](https://github.com/Aasif9/book_my_show_project/blob/master/README.md#eer-diagram-1)
+2. ###### [EER Diagram](https://github.com/Aasif9/Book-Ease/blob/master/README.md#eer-diagram-1)
  
-3. ###### [Functionalities](https://github.com/Aasif9/book_my_show_project/blob/master/README.md#functionalities-1)
+3. ###### [Functionalities](https://github.com/Aasif9/Book-Ease/blob/master/README.md#functionalities-1)
 
-4. ###### [Postman Commands](https://github.com/Aasif9/book_my_show_project/blob/master/README.md#postman-commands-1)
+4. ###### [Postman Commands](https://github.com/Aasif9/Book-Ease/blob/master/README.md#postman-commands-1)
 
 
 
@@ -33,8 +33,7 @@
 
 
 ## EER Diagram
-![Schema](https://user-images.githubusercontent.com/116377954/222906823-f7682629-2383-496b-91a0-923bcedd9b00.png)
-
+![Schema](https://user-images.githubusercontent.com/116377954/222748653-bd0071a1-7a42-4847-a9fa-2c037dce3a55.png)
 
 
 
@@ -42,32 +41,38 @@
 
 ## Functionalities
 
-###### User
+###### Student
 
-	• Add User
+	• Create Student
+		○ Create Card
+	• Update Mobile Number of Student
+	• Get Student Details
 		
 		
-###### Theater
+###### Author
 
-	• Add Theater
+	• Create Author
+	• Get Author details
 
 
-###### Movies
+###### Book
 
-	• Add Movies
+	• Create Book
 
     
-###### Shows
+###### Transaction
 
-	• Add Shows
-  
-###### Tickets
-
-	• Book Tickets
-      ○ Send email notification to the user
-      
-    • Cancel Tickets
-      ○ Send email notification to the user
+	• Issue a book
+		○ Check whether book is Available or not + Is Limit reached or not
+		○ Mark book as Unavailable
+		○ Link the book with card
+		○ Add transaction entry in the table
+	• Return a book
+		○ Mark book as available
+		○ Unlink the book with card
+		○ Calculate fine if any
+		○ Add transaction entry in the table
+	• Get Transactions info
 
 
 
@@ -75,90 +80,70 @@
 
 ## Postman Commands
 
-###### To Add User:
+###### To Create Student:
 
-	localhost:8080/user/add
-
-	{
-      "name": "String",
-      "email": "String",
-      "address": "String",
-      "mobileNumber": "String",
-      "age" : int
-	}
-
-
-
-###### To Add Theater:
-	
-	localhost:8080/theater/add
+	localhost:8080/student/add
 
 	{
-      "name": "String",
-      "location": "String",
-      "classicSeatsCount": int,
-      "premiumSeatsCount": int
+	    "name": "String",
+	    "country": "String",
+	    "age": int,
+	    "mobileNumber": "String",
+	    "email": "String"
 	}
+
+
+###### To Update Mobile Number of Student:
+
+	localhost:8080/student/update-mobNo
+
+
+###### To Get Student Details Through Email:
+
+	localhost:8080/student/get-user?email=RequestParam
+
+
+
+###### To Add Author:
 	
-
-###### To Add Movies:
-
-	localhost:8080/movies/add
+	localhost:8080/author/add
 
 	{
-      "movieName": "String",
-      "genre": "ENUM Type",
-      "language": "ENUM Type",
-      "rating": double,
-      "duration": int
+	    "name": "String",
+	    "country": "String",
+	    "age": int,
+	    "rating": double
 	}
 	
 
+###### To Add Book:
 
-
-###### To Add Shows:
-	
-	localhost:8080/shows/add
+	localhost:8080/book/add
 
 	{
-      "movieId":int,
-      "theaterId": int,
-      "classSeatPrice": int,
-      "premiumSeatPrice": int,
-      "showType": "ENUM Type",
-      "showTime": "hh:mm:ss",
-      "showDate":"yyyy-mm-dd"
+	    "name": "String",
+	    "authorId": int,
+	    "pages": int,
+	    "genre": "ENUM Type"
+	}
+	
+
+###### To Get Author Details:
+
+	localhost:8080/author/get-author?authorId=RequestParam
+
+
+###### To Issue Book:
+	
+	localhost:8080/transaction/issueBook
+
+	{
+	    "bookId": int,
+	    "cardId": int
 	}
 	
 	
 	
-###### To Book Ticket:	
+###### To Return Book:	
 
-	localhost:8080/tickets/book
-  
-    {
-      "showId": int,
-      "requestedSeats": ["String", "String", "..."],
-      "userId": int
-	}
-
-
-###### To Cancel Ticket:	
-
-	localhost:8080/tickets/cancel-ticket
-  
-    {
-      "ticketId" : int,
-      "deleteTicketList":["String", "String", "..."]
-	}
-	
-
-## Future Scope
-
-1. Multiple user handling 
-2. Seat locking during payment
-3. Multiple Screen handling in theater
-4. Payment Flow
-5. Login and User Account Management
-6. Authentication and Authorization
-
+	localhost:8080/transaction/returnBook?cardId=int&bookId=int
