@@ -2,7 +2,7 @@
 
 ## Table of contents
 
-1. ###### [Technology Used](https://github.com/Aasif9/book_my_show_project/blob/master/README.md#techonology-used)
+1. ###### [Technology Used](https://github.com/Aasif9/Book-Ease/blob/master/README.md#techonology-used)
 
 2. ###### [EER Diagram](https://github.com/Aasif9/book_my_show_project/blob/master/README.md#eer-diagram-1)
  
