@@ -1,4 +1,4 @@
-# Book My Show
+# Book Ease
 
 ## Table of contents
 
